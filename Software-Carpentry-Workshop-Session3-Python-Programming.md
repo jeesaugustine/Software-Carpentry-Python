@@ -420,7 +420,7 @@ We now write a shell script that is going to call this method on a list of count
 Create a file `makePlots.sh`
 
     continents="Canada Belgium"
-    Rscript GDP_plotter.py $continents
+    python GDP_plotter.py $continents
 
 Now its as simple as running a bash script 
 
