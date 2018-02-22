@@ -19,10 +19,10 @@ Time: 1 Hour 30 Minutes
 
 Functions are
 
-[ ] Mathematical interpretations of how to make life easy
-[ ] How will I get rid of these mundane repeated tasks, for heaves sake ?
-[ ] How to go from point A to point B on a map
-[ ] How can I get my Instagram tell me how many filters my friend has used in their post (to keep my sanity, helps to start )
+- [ ] Mathematical interpretations of how to make life easy
+- [ ] How will I get rid of these mundane repeated tasks, for heaves sake ?
+- [ ] How to go from point A to point B on a map
+- [ ] How can I get my Instagram tell me how many filters my friend has used in their post (to keep my sanity, helps to start )
 
 It helps you get from picture A to picture B every day;  **If you have one though**.
 
@@ -34,9 +34,12 @@ It helps you get from picture A to picture B every day;  **If you have one thoug
 ![Courtesy](https://d2mxuefqeaa7sj.cloudfront.net/s_AEFBA043F8D1FF4EEA67EE31D838B916CDF6206837EE90F4A379DCD53212DCAA_1518746309408_hqdefault.jpg)
 
 
-**Functions are mere ways of convenience defined under complicated jargons and terminologies**
 
-                                                                                                          - **Jees Augustine** 
+---
+
+
+> **Functions are mere ways of convenience defined under complicated jargons and terminologies**
+               -- **Jees Augustine**
 
 **So lets simply it for once and forever, Functions are**
 
@@ -135,6 +138,7 @@ We have a dataset !!!!!!!!!!
 Our dataset today is the [gapminder](https://www.gapminder.org/data/) dataset,  
 
 
+```    #Balans way of doing it 
     #Balans way of doing it 
     
     # Locate the file in your local computer drive - be ready with your location or navigate to your directory
@@ -175,7 +179,7 @@ Our dataset today is the [gapminder](https://www.gapminder.org/data/) dataset,
     plt.title('Mean GDP per Capita in Africa Vs Europe')
     pylab.show()
     
-
+```
 
 
 # Problems Here
@@ -188,9 +192,10 @@ Currently you will have to call with all possible combination calls before makin
 > But lets see what are we really trying to do here,
 
 
-    continents = ["first","second"]
+```    continents = ["first","second"]
+continents = ["first","second"]
     # we keep changing this part of the code. 
-
+```
 
 
 > **Is that the problem ?** 
@@ -198,7 +203,7 @@ Currently you will have to call with all possible combination calls before makin
 > **Why will you support a function** 
 
 
-## How did we Miss imaging we decided now we are not interested in ‘mean’ anymore and rather we are interested in ‘sum’ ! how many possible changes you need ?
+## Imagine we decided now we are not interested in ‘mean’ anymore and rather we are interested in ‘sum’ ! how many possible changes you need ?
 # Function’s defense
 
 Functions save your time as well as **your space**, and provides nice interfaces where you can get your *plug-n-play* to get your desired results without much of repetitions. 
@@ -212,34 +217,38 @@ Design and Layout your Function
 > **Make a clear goal and write out steps, no matter how small they are, before you code. (Commas matter here)**
 
 **Goal**: Design a method which publishes the mean GDP of a continent and yet plots the bar chart of the GDPs.
+**Input**   gapmider.txt
+**Output**  mean comparison plot GDP of a given continents 
+**Steps** 
+**1**   Accept the input text file 
 
-    **Input**   gapmider.txt
+**2**  Read the input file 
 
-        **Output**  mean comparison plot GDP of a given continents 
-          **Steps**   
+**3**  Get the mean of a specified Continent 
 
-                 **1**   Accept the input text file 
-         **2**  Read the input file 
-         **3**  Get the mean of a specified Continent 
-         **4**  Plot the chart for these two Continents
+**4**  Plot the chart for these two Continents
 
 
 ## **Analysis** 
 
-          **Steps**   
+**Steps**   
 
-                 **1**   Accept the input text file (No need of a function as the deadline itself is simple command)
-    
-         **2**  Read the input file (This requires some intelligence and its better if you can avoid all the codes for reading input files from clustering our main functionality )
+**1**   Accept the input text file (No need of a function as the deadline itself is simple command)
+
+**2**  Read the input file (This requires some intelligence and its better if you can avoid all the codes for reading input files from clustering our main functionality )
         
-         **3**  Get the mean of a specified Continent  (We need a function for this, for sure )
-         **4**  Plot the chart for these two Continents (no way i am going to write a eveytime, no not happening, sorry !! )
+**3**  Get the mean of a specified Continent  (We need a function for this, for sure )
+
+**4**  Plot the chart for these two Continents (no way i am going to write a eveytime, no not happening, sorry !! )
 #  “Talk is cheap. Show me the code” 
-                                                                                           — Linus Torvalds 
+                                           --Linus Torvalds 
+                                           
 
- 
+---
 
-    def fileReader(filename):
+
+``` def fileReader(filename):
+def fileReader(filename):
       """
       This functions reads a '.txt' file and return its contents to the one who invokes it 
       """
@@ -247,11 +256,13 @@ Design and Layout your Function
         my_file = pd.read_table("gapminder.txt")
         return my_file
 
+```
 
 ## File ready to use as a table much better
 
 
-    def calculateMeanForMyContinent(table, continent_name):
+``` def calculateMeanForMyContinent(table, continent_name):
+def calculateMeanForMyContinent(table, continent_name):
       """
       This function will help you calculate the mean of a given continent given its name from the given name and returns the value
       """
@@ -262,12 +273,12 @@ Design and Layout your Function
         continent_mean = continent.iloc[:,5].mean()
         
         return continent_mean
-
+```
 
 ## Mean Calculator Ready for use 
 
-
-    def plotIt(ylabel, title, aligner, figure_size):
+``` def plotIt(ylabel, title, aligner, figure_size):
+def plotIt(ylabel, title, aligner, figure_size):
       """
       """
       # Set figure width to 10 and height to 8
@@ -281,7 +292,7 @@ Design and Layout your Function
       pylab.show()
       plt.savefig("foo", format='pdf')
       plt.savefig("foo.pdf", bbox_inches='tight')
-
+```
 
 ## Plotter is also ready lets put it all together now 
 ## Wait, what !!!
@@ -289,7 +300,8 @@ Design and Layout your Function
 What we are not putting anything together, its all kept in the top of the file that we are writing,  and we are done.
 
 
-    # ----- -------- ------- ------- GDP_plotter.py ----- -------- ------- ------- #
+ ```# ----- -------- ------- ------- GDP_plotter.py ----- -------- ------- ------- #
+ # -----   ------- GDP_plotter.py ----- --------   #
     
     
     #Import pandas and pylab
@@ -314,22 +326,32 @@ What we are not putting anything together, its all kept in the top of the file t
     mean_gdps = [Africa_Mean, Europe_Mean]
     # Set figure width to 10 and height to 8
     plotIt('Mean GDP/Capita', 'Mean/Capita GDP Africa Vs Europe', 'center', [10, 8])
+```
 
 Imagine you want plot the graph for three of the continents now ? What changes are needed ?
 
 
 > Add this line after line 16
-    Asian_Mean = calculateMeanForMyContinent(my_table, "Asia")
+``` Asian_Mean = calculateMeanForMyContinent(my_table, "Asia")
 
+    Asian_Mean = calculateMeanForMyContinent(my_table, "Asia")
+```
 
 > Change line 19 and 20 to the following
+> 
+``` continents = ["Africa","Europe", "Asia"]
     continents = ["Africa","Europe", "Asia"]
     mean_gdps = [Africa_Mean, Europe_Mean, Asian_Mean]
+    
+```
+    
 
 
 > Change the plotter header 
-    plotIt('Mean GDP/Capita', 'Mean/Capita GDP Africa VS Europe Vs Asia', 'center', [10, 8])
-
+> 
+``` plotIt('Mean GDP/Capita', 'Mean/Capita GDP Africa VS Europe Vs Asia', 'center', [10, 8])
+ plotIt('Mean GDP/Capita', 'Mean/Capita GDP Africa VS Europe Vs Asia', 'center', [10, 8])
+```
 Total Changes = 4 lines
 
 ## Think how much code change is needed for if we have change the original code
@@ -352,7 +374,8 @@ Answer is yes we can,
 How hard is it ? its actually quite simple, Let try to explain it here 
 
 
-    def calculateMeanForMyContinent(table, continent_name="North America"):
+``` def calculateMeanForMyContinent(table, continent_name="North America"):
+def calculateMeanForMyContinent(table, continent_name="North America"):
       """
       This function will help you calculate the mean of a given continent given its name from the given name and returns the value
       """
@@ -363,7 +386,7 @@ How hard is it ? its actually quite simple, Let try to explain it here
         continent_mean = continent.iloc[:,5].mean()
         
         return continent_mean
-
+```
 What did i do here, whenever I am calling the function 
 
     calculateMeanForMyContinent
@@ -388,8 +411,9 @@ I can specify an input parameter as a continent and if we miss to provide one in
 
 Just like we can call other scripts and functions from our Python programs, we can call an Python script from the command line. We use the  `Python`  command  program to do this.
 
-
-    python name_of_the_script.py
+``` python name_of_the_script.py
+python name_of_the_script.py
+```
 
 
     #In our case it will be 
@@ -402,20 +426,22 @@ Its much more simpler, all we have to do is to modify out script so that we acce
 We add the following lines to the code now,
 
 
-    import sys
+  ```  import sys
+import sys
     # calculate the mean of Africa
     Africa_Mean = calculateMeanForMyContinent(my_table, sys.argv[1])
     # calculate the mean of Europe
     Europe_Mean = calculateMeanForMyContinent(my_table, sys.argv[2])
-
+```
 You are done,  now you will call our script by the follwing sequence of commands
 
 
+``` #Python call should be 
     #Python call should be 
     # >python file_name.pyt argument_1 argument_2 [.....]
     # In our case it will be 
     > python GDP_plotter.py Africa Europe
-
+``` 
 We now write a shell script that is going to call this method on a list of countries.
 Create a file `makePlots.sh`
 
@@ -428,4 +454,5 @@ Now its as simple as running a bash script
     bash makePlots.sh
 
 This may not clearly enable you to see the output graphs (bash does not allow anything to pop out of its terminal unless its something important,) but we have saved the output plots in the directory to take a look later. So problem solved.
+
 
